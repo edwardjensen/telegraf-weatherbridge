@@ -15,4 +15,4 @@ services:
       - METEOBRIDGE_USERNAME=meteobridge
       - METEOBRIDGE_PASSWORD=meteobridge
       - METEOBRIDGE_HOSTNAME=meteobridge
-      restart: always
+    restart: always
