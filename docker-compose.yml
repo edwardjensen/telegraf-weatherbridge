@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  telegraf-meteobridge:
+    image: telegraf:1.18.1
+    container_name: telegraf-meteobridge
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    environment:
+      - INFLUXDB_URL=127.0.0.1
+      - INFLUXDB_TOKEN=abc123
+      - INFLUXDB_ORG=abc123
+      - INFLUXDB_BUCKET=meteobridge
+      - METEOBRIDGE_URL=127.0.0.1
+      - METEOBRIDGE_USERNAME=meteobridge
+      - METEOBRIDGE_PASSWORD=meteobridge
+      - METEOBRIDGE_HOSTNAME=meteobridge
+      restart: always
